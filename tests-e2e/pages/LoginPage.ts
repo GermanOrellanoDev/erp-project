@@ -8,6 +8,7 @@ export class LoginPage {
     private readonly passwordInput: Locator;
     private readonly loginButton: Locator;
     private readonly loginForm: Locator;
+    private readonly loginError: Locator;
 
     constructor(page: Page){
         this.page = page;
@@ -16,6 +17,7 @@ export class LoginPage {
         this.usernameInput = page.getByTestId('username-input');
         this.passwordInput = page.getByTestId('password-input');
         this.loginButton = page.getByTestId('login-button');   
+        this.loginError = page.getByTestId('login-error');
     }
 
     async goto() {
@@ -33,5 +35,14 @@ export class LoginPage {
         await expect(this.usernameInput).toBeVisible();
         await expect(this.passwordInput).toBeVisible();
         await expect(this.loginButton).toBeVisible();        
+    }
+
+    async expectLoginPage(){
+        await expect(this.page).toHaveURL('/login/');
+        await expect(this.loginButton).toBeVisible();
+    }
+
+    async expectInvalidCredentials(){
+        await expect(this.loginError).toBeVisible();
     }
 }
