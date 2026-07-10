@@ -32,6 +32,10 @@ jobs:
         run: |
           python manage.py migrate
 
+      - name: Datos de prueba
+        run: | 
+          python manage.py seed_test_data
+
       - name: Configurar Node
         uses: actions/setup-node@v4
         with:
