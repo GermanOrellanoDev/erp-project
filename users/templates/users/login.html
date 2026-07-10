@@ -47,12 +47,11 @@
         <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">ERP</h1>
         <form method="post" data-testid="login-form">
             {% csrf_token %}
-
             <div class="django-form">
                 {{form.as_p}}
             </div>
             {% if form.errors %} 
-                <div class="bg-red-100 border-1-4 border-red-500 text-red-700 p-4 mb-4 rounded" role="alert">
+                <div data-testid="login-error" class="bg-red-100 border-1-4 border-red-500 text-red-700 p-4 mb-4 rounded" role="alert">
                     <p>{{form.non_field_errors}}</p>
                 </div>
             {% endif %}
