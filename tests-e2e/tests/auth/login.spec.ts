@@ -30,7 +30,7 @@ test.describe('Login', ()=> {
         await dashboardPage.expectLoaded();
 
         await dashboardPage.expectLoggedUser(
-            users.admin.username
+            users.admin.firstName
         );
     
     });
