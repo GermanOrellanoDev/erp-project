@@ -10,8 +10,8 @@
 <body class="bg-gray-100 font-sans">
     <nav class="bg-[#233b6e] text-white shadow-md">
         <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <a href="{% url 'dashboard' %}" data-testid="logo-link" class="text-2xl font-bold rounded-lg px-2 py-1 transition-all hover:bg-white/10">
-                <img src="{% static 'Logo.png' %}" alt="ERP Logo" class="h-8 w-8">
+            <a href="{% url 'dashboard' %}" data-testid="logo-link" class="text-2xl font-bold flex flex-row items-center px-2 py-1 transition-all hover:bg-white/10">
+                <img src="{% static '/img/erp.png' %}" alt="ERP Logo" class="h-10 w-10 mx-3">
                 <span>ERP</span>
             </a>
             <div class="relative w-full md:w-1/2">
@@ -24,7 +24,7 @@
                 <div class="relative">
                     <button data-testid="user-menu-button" id="user-menu-button" class="flex items-center space-x-2 text-lg font-medium transition-all hover:bg-white/10 p-2 rounded-lg">
                         <span data-testid="logged-user">{{user.first_name | default:user.username}}</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-icon lucide-circle-user"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-icon lucide-circle-user"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>
                     </button>
                     <div id="user-dropdown-menu" class="user-menu-dropdown absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg py-1 z-50" **hidden**>
                         <a href="#perfil" class="flex items-center px-4 py-2 hover:bg-gray-200">
