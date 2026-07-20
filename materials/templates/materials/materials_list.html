@@ -37,6 +37,9 @@
                 <div class="flex items-center space-x-2 mt-4 md:mt-0">
                     <a href="?export=csv{% for key, value in request.GET.items %}{% if key != 'page' %}&{{key}}={{value}}{% endif %}{% endfor %}" class="bg-green-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-300 hover:bg-green-700">Export to CSV</a>
                 </div>
+                <div class="flex justify-end space-x-2">
+                    <a href="{% url 'materials:material_bulk_create' %}" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-md shadow-md hover:bg-indigo-700 transition duration-300">Bulk Upload (CSV)</a>
+                </div>
                 {% if permissions.materials >= 2 %}
                 <a href="{% url 'materials:material_create' %}" class="bg-[#233b6e] text-white font-semibold py-2 px-6 rounded-lg text-center transition-colors duration-300 hover:bg-[#1a2c53]">Create New Material</a>
                 {% endif %}
@@ -73,7 +76,7 @@
                         {{material.status}}  
                     </span>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{material.created_by_id_username}}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{material.created_by.username}}</td>
                 {% if permissions.materials >= 2 %}
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <a href="{% url 'materials:material_edit' material.pk %}" class="text-indigo-600 hover:text-indigo-900 mr-4">Edit</a>
