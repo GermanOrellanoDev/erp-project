@@ -9,6 +9,6 @@ class MaterialForm(forms.ModelForm):
 
 class CsvUploadForm(forms.Form):
     csv_file = forms.FileField(
-        label='Supplier CSV File',
-        help_text='The file must contain headers that match the model fields.'
+        label='Archivo CSV de materiales',
+        help_text='El archivo debe contener encabezados que coincidan con los campos del modelo.'
     )
