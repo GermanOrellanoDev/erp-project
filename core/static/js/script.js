@@ -11,7 +11,7 @@ if(hamburgerBtn && mobileMenu) {
 
 if(userMenuButton && userMenuDropdown) {
     userMenuButton.addEventListener('click', (event)=> {
-        userMenuButton.classList.toggle('hidden');
+        userMenuDropdown.classList.toggle('hidden');
         event.stopPropagation();
     });
 }

@@ -40,3 +40,13 @@ dist/
 # Archivos temporales
 *.swp
 *.swo
+
+# Node
+node_modules/
+
+# Playwright
+playwright-report/
+test-results/
+tests-e2e/node_modules/
+tests-e2e/playwright-report/
+tests-e2e/test-results/
